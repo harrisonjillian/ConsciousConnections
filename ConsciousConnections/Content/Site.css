@@ -1,0 +1,218 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('../Content/Assets/Flower.jpg');
+    background-size: cover;
+    color: #013220;
+}
+
+.navcolor {
+    color: #ffffff;
+}
+.navcolor:hover{
+    background-color: darkgoldenrod;
+    text-decoration: none;
+}
+
+.nav {
+    color: #ffffff;
+}
+
+.footer{
+    text-align: center;
+    color: darkgoldenrod;
+    font-weight: bold;
+}
+
+.createlinkcolor:hover{
+    background-color: darkgoldenrod;
+    text-decoration: none;
+}
+
+.cardtextcolor {
+    color: #ffffff;
+    text-align: center;
+    padding-top: 1.5em;
+}
+.card{
+    padding-bottom: 2em;
+    border-style: none;
+    border-top:ridge;
+    border-top-color: #013220;
+}
+
+.form-check{
+    background-color: darkgoldenrod;
+}
+
+.actionlinkcolor {
+    color: #013220;
+    padding-right: 1.1em;
+}
+
+.form-horizontal{
+    font-weight: bold;
+    
+}
+
+.createlinkcolor{
+    color: white;
+    background-color: #013220;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+a:hover{
+    color: #013220;
+}
+
+.companyinfo{
+    padding-bottom: 2em;
+}
+
+.row{
+    padding-top: 1em;
+}
+
+.container-fluid{
+    padding-top: 1em;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+.btn {
+    background-color: #013220;
+    border-color: #013220;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #013220;
+}
+
+.jumbotron {
+    background-color: transparent;
+    margin-top: 15vw;
+    text-align: center;
+}
+
+#aboutconscious {
+    margin-top: 18vw;
+    text-align: center;
+}
+
+/* this messes up the links at the bottom so you can't see them
+a:link {
+    color: #013220;
+    border-color: #013220;
+    color: #ffffff;
+    text-decoration: none;
+}*/
+
+.card-columns{
+    column-count: 1;
+}
+
+
+/*.footer {*/
+/*    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;*/
+    /*padding: .5rem;
+    background-color: #efefef;
+    text-align: center;
+}*/
+
+.col-12 {
+    text-align: center;
+    padding-top: 1vw;
+}
+
+#buttonpadding {
+    margin-bottom: 1vw;
+}
+
+
+.companyinfo {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.productinfo {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.reviewinfo {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.card-columns {
+    column-count: 4;
+}
+
+
+
+
+
+/*
+
+
+
+
+
+.form-horizontal {
+    background-color: #dac6ce;
+}
+
+.table {
+    font-size: 15px;
+}
+
+.testing {
+    background-color: #dac6ce;
+    font-size: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dl-horizontal {
+    background-color: #dac6ce;
+    font-size: 15px;
+}
+
+
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+ Set padding to keep content from hitting the edges 
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+ Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+ Set width on the form input elements since they're 100% wide by default 
+input,
+select,
+textarea {
+    max-width: 280px;
+}*/

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ConsciousConnections.Models.ProductListItem>
+
+
+
+<div class="col-12">
+    <h2>View All Products</h2>
+    <div id="buttonpadding">
+        <h2>@Html.ActionLink("Create A Product", "Create", "Create", new { @class = "btn btn-primary btn-large" })</h2>
+    </div>
+</div>
+
+
+<div class="container-fluid content-row">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-12 col-lg-4">
+                <div class="card h-100">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title text-center" style="background-color: darkgoldenrod" ;>@Html.DisplayFor(modelItem => item.ProductName, new { @class = "cardtextcolor" }) </h2>
+                            @*<h2 class="card title" style="background-color: darkgoldenrod" ;> @Html.ActionLink($"{item.ProductName}", "Details", "Product", new { id = item.ProductId }, new { @class = "cardtextcolor" })</h2>*@
+                            <h5 class="card-title text-center">@Html.DisplayFor(modelItem => item.CompanyName)</h5>
+                            <p class="card-text text-center">@Html.DisplayFor(modelItem => item.Price)</p>
+                            <p class="card-text text-center">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
+                        </div>
+                </div>
+                    <div class="card-footer mt-auto text-center" style="background-color: #ebedeb" ;>
+                        @*@Html.ActionLink("View Product Information", "Details", new { id = item.ProductId }, new { @class = "actionlinkcolor" })*@
+                        @Html.ActionLink($"Learn More About {item.CompanyName}, {item.ProductName}", "Details", new { id = item.ProductId }, new { @class = "actionlinkcolor" })<br />
+                    </div>
+                    </div>
+
+            </div>
+        }
+    </div>
+</div>

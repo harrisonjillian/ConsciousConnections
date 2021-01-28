@@ -1,0 +1,101 @@
+﻿@model ConsciousConnections.Models.CompanyEdit
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="col-12">
+    <h2>Edit Company Information</h2>
+</div>
+@using (Html.BeginForm())
+{
+
+
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.CompanyId)
+
+    <div class="form-group text-center">
+        @Html.LabelFor(model => model.CompanyName)
+        <div class="col-md-6 offset-3">
+            @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group text-center">
+        @Html.LabelFor(model => model.CompanyDescription)
+        <div class="col-md-6 offset-3">
+            @Html.TextAreaFor(model => model.CompanyDescription, new { @class = "form-control" })
+            @*@Html.EditorFor(model => model.ReviewDescription, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.CompanyDescription, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group text-center">
+        @Html.LabelFor(model => model.StreetAddress)
+        <div class="col-md-6 offset-3">
+            @Html.EditorFor(model => model.StreetAddress, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.StreetAddress, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group text-center">
+        @Html.LabelFor(model => model.City)
+        <div class="col-md-6 offset-3">
+            @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group text-center">
+        @Html.LabelFor(model => model.State))
+        <div class="col-md-6 offset-3">
+            @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group text-center">
+        @Html.LabelFor(model => model.ZipCode)
+        <div class="col-md-6 offset-3">
+            @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group text-center">
+        @Html.LabelFor(model => model.Website)
+        <div class="col-md-6 offset-3">
+            @Html.EditorFor(model => model.Website, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Website, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group text-center">
+        @Html.LabelFor(model => model.PhoneNumber)
+        <div class="col-md-6 offset-3">
+            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-12">
+            <input type="submit" value="Save" class="btn btn-primary btn-lg" />
+        </div>
+    </div>
+</div>
+}
+
+<div class="col-12">
+    @Html.ActionLink("View All Companies", "Index", null, new { @class = "createlinkcolor" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

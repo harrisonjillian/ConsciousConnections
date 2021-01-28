@@ -1,0 +1,41 @@
+﻿@model ConsciousConnections.Models.ReviewDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="reviewinfo">
+    <h2>Reviews</h2>
+</div>
+
+
+<div class="container-fluid content-row">
+    <div class="row">
+        <div class="col-sm-12 col-lg-8 offset-2">
+            <div class="card h-100">
+                <div class="card">
+                    @*<h2 class="card title" style="background-color: darkgoldenrod" ;>@Html.ActionLink($"{item.CompanyName}", "Details", "Company", new { id = item.CompanyId }, new { @class = "cardtextcolor" })  </h2>*@
+                    <h2 class="card-title text-center" style="background-color: darkgoldenrod" ;>
+                        @Html.DisplayFor(modelItem => Model.Rating)
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                        </svg>
+
+                    </h2>
+                    <h4 class="card-title text-center">@Html.DisplayFor(modelItem => Model.Product.ProductName)</h4>
+                    <h4 class="card-title text-center">@Html.DisplayFor(modelItem => Model.ReviewDescription)</h4>
+                    <p class="card-text text-center">Created Date: @Html.DisplayFor(modelItem => Model.CreatedUtc)</p>
+                    <p class="card-text text-center">@Html.HiddenFor(modelItem => Model.ReviewId)</p>
+                    <p class="card-text text-center">@Html.HiddenFor(modelItem => Model.ProductId)</p>
+                </div>
+                <div class="card-footer mt-auto text-center " style="background-color: #ebedeb" ;>
+                    @*<h4>@Html.ActionLink("View Products Now", "Details", "Product", new { id = Model.ProductId }, new { @class = "btn btn-primary btn-large" })</h4>* CANT FIGURE THIS OUT, WILL ADD IF HAVE TIME@*@
+                    @Html.ActionLink("View All Reviews", "Index", new { @class = "actionlinkcolor" }, new { @class = "actionlinkcolor" })
+                    @Html.ActionLink("Edit Your Review", "Edit", new { id = Model.ReviewId }, new { @class = "actionlinkcolor" })
+                    @Html.ActionLink("Delete Review", "Delete", new { id = Model.ReviewId }, new { @class = "actionlinkcolor" })
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

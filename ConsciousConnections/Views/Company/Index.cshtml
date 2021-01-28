@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ConsciousConnections.Models.CompanyListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="col-12">
+    <h2>List of Companies</h2>
+    <div id="buttonpadding">
+        <h2>@Html.ActionLink("Create A Company", "Create", "Create", new { @class = "btn btn-primary btn-large" })</h2>
+    </div>
+</div>
+
+<div class="container-fluid content-row">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-12 col-lg-4">
+                <div class="card h-100">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title text-center" style="background-color: darkgoldenrod";>@Html.DisplayFor(modelItem => item.CompanyName, new  {@class = "cardtextcolor"}) </h2>
+                            @*<h2 class="card title" style="background-color: darkgoldenrod" ;>@Html.ActionLink($"{item.CompanyName}", "Details", "Company", new { id = item.CompanyId }, new { @class = "cardtextcolor" })  </h2>*@
+                            @*<h4> @Html.ActionLink($"{item.CompanyName}", "Details", "Company", new { id = item.CompanyId }, new { @class = "btn btn-primary btn-large" })</h4>*@
+                            <p class="card-text text-center">@Html.DisplayFor(modelItem => item.CompanyDescription)</p>
+                            <p class="card-text text-center"> @Html.DisplayFor(modelItem => item.Website)</p>
+                            <p class="card-text">@Html.HiddenFor(modelItem => item.CompanyId)</p>
+                        </div>
+                    </div>
+                    <div class="card-footer mt-auto text-center" style="background-color: #ebedeb" ;>
+                        @Html.ActionLink($"Learn More About {item.CompanyName}", "Details", new { id = item.CompanyId }, new { @class = "actionlinkcolor" })<br />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@*@(
+    const int MaxLength = 100;
+    var name = "CompanyDescription";
+    if (name.Length > MaxLength)
+        name = name.Substring(0, MaxLength);
+    )*@

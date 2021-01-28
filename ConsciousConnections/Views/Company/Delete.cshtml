@@ -1,0 +1,43 @@
+﻿@model ConsciousConnections.Models.CompanyDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="companyinfo">
+    <h2>Delete Company</h2>
+    <h5>Are you sure you want to delete this company?</h5>
+
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container-fluid content-row">
+        <div class="row">
+            <div class="col-sm-12 col-lg-8 offset-2">
+                <div class="card h-100">
+                    <div class="card">
+                        <h2 class="card-title text-center" style="background-color: darkgoldenrod" ;>@Html.DisplayFor(modelItem => Model.CompanyName)</h2>
+                        <h4 class="card-title">@Html.DisplayFor(modelItem => Model.CompanyDescription)</h4>
+                        <p class="card-text text-center">@Html.DisplayFor(modelItem => Model.StreetAddress) | @Html.DisplayFor(modelItem => Model.City) | @Html.DisplayFor(modelItem => Model.State) | @Html.DisplayFor(modelItem => Model.ZipCode) </p>
+                        <p class="card-text text-center">@Html.DisplayFor(modelItem => Model.Website)</p>
+                        <p class="card-text text-center">@Html.DisplayFor(modelItem => Model.PhoneNumber)</p>
+                    </div>
+                    <div class="card-footer mt-auto text-center" style="background-color: #ebedeb" ;>
+                        @Html.ActionLink("Back To Companies", "Index", new { @class = "actionlinkcolor" }, new { @class = "actionlinkcolor" }) 
+                        @Html.ActionLink("Edit Company Information", "Edit", new { id = Model.CompanyId }, new { @class = "actionlinkcolor" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary btn-large" />
+        </div>
+    </div>
+
+}
+
+

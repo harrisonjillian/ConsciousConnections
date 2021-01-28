@@ -1,0 +1,35 @@
+﻿@model ConsciousConnections.Models.CompanyDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="companyinfo">
+<h2>Company Information</h2>
+</div>
+
+<div class="container-fluid content-row">
+    <div class="row">
+        <div class="col-sm-12 col-lg-8 offset-2">
+            <div class="card h-100">
+                <div class="card">
+                    <h2 class="card-title text-center" style="background-color: darkgoldenrod" ;>@Html.DisplayFor(modelItem => Model.CompanyName)</h2>
+                    <h4 class="card-title text-center">@Html.DisplayFor(modelItem => Model.CompanyDescription)</h4>
+                    <p class="card-text text-center">@Html.DisplayFor(modelItem => Model.StreetAddress) | @Html.DisplayFor(modelItem => Model.City) | @Html.DisplayFor(modelItem => Model.State) | @Html.DisplayFor(modelItem => Model.ZipCode) </p>
+                    <p class="card-text text-center">@Html.DisplayFor(modelItem => Model.Website)</p>
+                    <p class="card-text text-center">@Html.DisplayFor(modelItem => Model.PhoneNumber)</p>
+                </div>
+                <div class="card-footer mt-auto text-center " style="background-color: #ebedeb" ;>
+                    @*<h4>@Html.ActionLink("View Products Now", "Details", "Product", new { id = Model.ProductId }, new { @class = "btn btn-primary btn-large" })</h4>**@
+                    @Html.ActionLink("Back to Companies", "Index", new { @class = "actionlinkcolor" }, new { @class = "actionlinkcolor" })
+                    @Html.ActionLink("Edit Company Information", "Edit", new { id = Model.CompanyId }, new { @class = "actionlinkcolor" })
+                    @Html.ActionLink("Delete This Company", "Delete", new { id = Model.CompanyId }, new { @class = "actionlinkcolor" })
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+

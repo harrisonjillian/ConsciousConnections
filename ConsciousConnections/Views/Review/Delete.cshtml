@@ -1,0 +1,52 @@
+﻿@model ConsciousConnections.Models.ReviewDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="reviewinfo">
+    <h2>Delete Review</h2>
+    <h5>Are you sure you want to delete this review?</h5>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+
+    <div class="container-fluid content-row">
+        <div class="row">
+            <div class="col-sm-12 col-lg-8 offset-2">
+                <div class="card h-100">
+                    <div class="card">
+                        <h2 class="card-title text-center" style="background-color:darkgoldenrod" ;>
+                            @Html.DisplayFor(modelItem => Model.Rating) <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                                </svg>
+                                            </h2>
+                        <h4 class="card-title text-center">@Html.DisplayFor(modelItem => Model.ReviewDescription)</h4>
+                        <p class="card-text text-center">@Html.HiddenFor(modelItem => Model.ProductId)</p>
+                        <p class="card-text text-center">@Html.HiddenFor(modelItem => Model.ReviewId)</p>
+                    </div>
+                    <div class="card-footer mt-auto text-center" style="background-color: #ebedeb" ;>
+                        @Html.ActionLink("Back To Reviews", "Index", new { @class = "actionlinkcolor" }, new { @class = "actionlinkcolor" })
+                        @Html.ActionLink("Edit Review", "Edit", new { id = Model.ProductId }, new { @class = "actionlinkcolor" })
+                        @Html.ActionLink("Delete Review", "Delete", new { id = Model.ProductId }, new { @class = "actionlinkcolor" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary btn-large" />
+        </div>
+    </div>
+
+}
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+﻿@model ConsciousConnections.Models.ProductDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="productinfo">
+    <h2>Product Information</h2>
+</div>
+
+<div class="container-fluid content-row">
+    <div class="row">
+        <div class="col-sm-12 col-lg-8 offset-2">
+            <div class="card h-100">
+                <div class="card">
+                    <h2 class="card-title text-center" style="background-color:darkgoldenrod" ;>@Html.DisplayFor(modelItem => Model.ProductName)</h2>
+                    <h4 class="card-title text-center">@Html.DisplayFor(modelItem => Model.ProductDescription)</h4>
+                    <p class="card-text text-center">@Html.DisplayFor(modelItem => Model.Price)</p>
+                    <div class="col-12">
+                        <div class="col-md-2 offset-5">
+                            @if (Model.IsGreenSealCertified)
+                            {
+                                <img src="~/Content/Assets/GreenSealCertified.jpg" class="img-fluid" halt="greensealcertified" />
+                            }
+                            @if (Model.IsRainForestAllianceCertified)
+                            {
+                                <img src="~/Content/Assets/RainforestAlliance.jpg" class="img-fluid" halt="rainforestalliancecertified" />
+                            }
+                            @if (Model.IsLeapingBunnyCertified)
+                            {
+                                <img src="~/Content/Assets/LeapingBunnyCertified.jpg" class="img-fluid" halt="leapingbunnycertified" />
+                            }
+
+                            @if (Model.IsFairTradeUSACertified)
+                            {
+                                <img src="~/Content/Assets/FairTradeCertified.png" class="img-fluid" halt="rainforestalliancecertified" />
+                            }
+                        </div>
+                    </div>
+                    <br />
+                    <p class="card-text text-center">COMPANY: @Html.DisplayFor(modelItem => Model.CompanyName)</p>
+                    <h6 class="card-title text-center">@Html.HiddenFor(modelItem => Model.CompanyId)</h6>
+                    <h6 class="card-title text-center">@Html.HiddenFor(modelItem => Model.ProductId)</h6>
+                    <div>
+                        <div class="card-footer mt-auto text-center" style="background-color: #ebedeb" ;>
+                            @Html.ActionLink("Back To Products", "Index", new { @class = "actionlinkcolor" }, new { @class = "actionlinkcolor" })
+                            @Html.ActionLink("Edit Product", "Edit", new { id = Model.ProductId }, new { @class = "actionlinkcolor" })
+                            @Html.ActionLink("Delete Product", "Delete", new { id = Model.ProductId }, new { @class = "actionlinkcolor" })
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+

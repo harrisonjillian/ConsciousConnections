@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ConsciousConnections.Models.ReviewListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="col-12">
+    <h2>Reviews</h2>
+    <div id="buttonpadding">
+        <h2>@Html.ActionLink("Create A Review", "Create", "Create", new { @class = "btn btn-primary btn-large" })</h2>
+    </div>
+</div>
+
+
+<div class="container-fluid content-row">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-12 col-lg-4">
+                <div class="card h-100">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title text-center" style="background-color: darkgoldenrod" ;>@Html.DisplayFor(modelItem => item.ProductName, new { @class = "cardtextcolor" }) </h2>
+                            @*<h2 class="card title" style="background-color: darkgoldenrod" ;> @Html.ActionLink($"{item.ProductName}", "Details", "Product", new { id = item.ProductId }, new { @class = "cardtextcolor" })</h2>*@
+                            <p class="card-text text-center">
+                                @Html.DisplayFor(modelItem => item.Rating)
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                </svg>
+                            </p>
+                            <p class="card-text text-center">@Html.DisplayFor(modelItem => item.ReviewDescription)</p>
+                            <p class="card-text text-center"> - @Html.DisplayFor(modelItem => item.Id)</p>
+
+
+                        </div>
+                    </div>
+                    <div class="card-footer mt-auto text-center" style="background-color: #ebedeb" ;>
+                        @Html.ActionLink("View Review", "Details", new { id = item.ReviewId }, new { @class = "actionlinkcolor" })
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
