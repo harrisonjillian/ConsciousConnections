@@ -1,4 +1,5 @@
-﻿using ConsciousConnections.Data;
+﻿using ConsciousConnections.Contracts;
+using ConsciousConnections.Data;
 using ConsciousConnections.Models;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,11 @@ using System.Threading.Tasks;
 
 namespace ConsciousConnections.Services
 {
-    public class ReviewService
+    public class ReviewService : IReviewService 
     {
         private readonly Guid _userId;
+
+        public Guid UserId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public ReviewService(Guid userId)
         {

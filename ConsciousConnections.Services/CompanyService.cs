@@ -1,4 +1,5 @@
-﻿using ConsciousConnections.Data;
+﻿using ConsciousConnections.Contracts;
+using ConsciousConnections.Data;
 using ConsciousConnections.Models;
 using System;
 using System.Collections.Generic;
@@ -8,40 +9,45 @@ using System.Threading.Tasks;
 
 namespace ConsciousConnections.Services
 {
-    public class CompanyService 
-    { 
+
+   
+    public class CompanyService: ICompanyService
+    {
 
         private readonly Guid _userId;
 
-    public CompanyService(Guid userId)
-    {
-        _userId = userId;
-    }
+        Guid ICompanyService.UserId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-    public bool CreateCompany(CompanyCreate model)
-    {
-        var entity =
-            new Company()
-            {
-                Id = _userId.ToString(),
-                CompanyName = model.CompanyName,
-                CompanyDescription = model.CompanyDescription,
-                StreetAddress = model.StreetAddress,
-                City = model.City,
-                State = model.State,
-                ZipCode = model.ZipCode,
-                WebSite = model.Website,
-                PhoneNumber = model.PhoneNumber,
-                CreatedUtc = DateTime.Now,
-                
-            };
 
-        using (var ctx = new ApplicationDbContext())
+        public CompanyService(Guid userId)
         {
-            ctx.Companies.Add(entity);
-            return ctx.SaveChanges() == 1;
+            _userId = userId;
         }
-    }
+
+        public bool CreateCompany(CompanyCreate model)
+        {
+            var entity =
+                new Company()
+                {
+                    Id = _userId.ToString(),
+                    CompanyName = model.CompanyName,
+                    CompanyDescription = model.CompanyDescription,
+                    StreetAddress = model.StreetAddress,
+                    City = model.City,
+                    State = model.State,
+                    ZipCode = model.ZipCode,
+                    WebSite = model.Website,
+                    PhoneNumber = model.PhoneNumber,
+                    CreatedUtc = DateTime.Now,
+
+                };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Companies.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
         public IEnumerable<CompanyListItem> GetCompanies()
         {
             using (var ctx = new ApplicationDbContext())
@@ -58,10 +64,10 @@ namespace ConsciousConnections.Services
                                     CompanyName = e.CompanyName,
                                     CompanyDescription = e.CompanyDescription,
                                     Website = e.WebSite,
-                                    
+
                                     Products = e.Products,
-                                    
-                         
+
+
                                     //CreatedUtc = DateTime.Now
                                 }
                         );
@@ -69,7 +75,6 @@ namespace ConsciousConnections.Services
                 return query.ToArray();
             }
         }
-
 
         public CompanyDetail GetCompanyById(int id)
         {
@@ -92,9 +97,9 @@ namespace ConsciousConnections.Services
                         Website = entity.WebSite,
                         PhoneNumber = entity.PhoneNumber,
                         CreatedUtc = DateTime.Now,
-                        ProductId = entity.ProductId,                      
+                        ProductId = entity.ProductId,
                         ModifiedUtc = entity.ModifiedUtc,
-                       
+
                     };
             }
         }

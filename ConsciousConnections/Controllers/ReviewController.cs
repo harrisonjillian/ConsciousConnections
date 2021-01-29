@@ -1,4 +1,5 @@
-﻿using ConsciousConnections.Data;
+﻿using ConsciousConnections.Contracts;
+using ConsciousConnections.Data;
 using ConsciousConnections.Models;
 using ConsciousConnections.Services;
 using Microsoft.AspNet.Identity;
@@ -13,6 +14,18 @@ namespace ConsciousConnections.Controllers
    // [Authorize]
     public class ReviewController : Controller
     {
+
+        //private readonly IReviewService _reviewService;
+        ////private 
+
+
+        //public ReviewController(IReviewService reviewService)
+        //{
+        //    _reviewService = reviewService;
+        //}
+
+
+
         // GET: Review
         public ActionResult Index()
         {

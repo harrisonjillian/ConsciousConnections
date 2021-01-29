@@ -1,4 +1,5 @@
-﻿using ConsciousConnections.Models;
+﻿using ConsciousConnections.Contracts;
+using ConsciousConnections.Models;
 using ConsciousConnections.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -12,6 +13,15 @@ namespace ConsciousConnections.Controllers
 {
     public class CompanyController : Controller
     {
+
+        //private readonly ICompanyService _companyService;
+
+        //public CompanyController (ICompanyService companyService)
+        //{
+        //    _companyService = companyService;
+        //}
+
+
         // GET: Company
         public ActionResult Index()
         {

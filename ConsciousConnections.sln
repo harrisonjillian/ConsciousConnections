@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsciousConnections.Models
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsciousConnections.Services", "ConsciousConnections.Services\ConsciousConnections.Services.csproj", "{6ACD1BCD-DD17-4B27-AAE2-ECE87FABDD59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsciousConnections.Contracts", "ConsciousConnections.Contracts\ConsciousConnections.Contracts.csproj", "{B3EA18BE-81FF-4AFA-88C0-FEDBC9D20EB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6ACD1BCD-DD17-4B27-AAE2-ECE87FABDD59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ACD1BCD-DD17-4B27-AAE2-ECE87FABDD59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ACD1BCD-DD17-4B27-AAE2-ECE87FABDD59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3EA18BE-81FF-4AFA-88C0-FEDBC9D20EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3EA18BE-81FF-4AFA-88C0-FEDBC9D20EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3EA18BE-81FF-4AFA-88C0-FEDBC9D20EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3EA18BE-81FF-4AFA-88C0-FEDBC9D20EB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

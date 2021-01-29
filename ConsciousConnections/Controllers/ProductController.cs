@@ -1,4 +1,5 @@
-﻿using ConsciousConnections.Data;
+﻿using ConsciousConnections.Contracts;
+using ConsciousConnections.Data;
 using ConsciousConnections.Models;
 using ConsciousConnections.Services;
 using Microsoft.AspNet.Identity;
@@ -11,9 +12,22 @@ using System.Web.Mvc;
 namespace ConsciousConnections.Controllers
 {
     [Authorize]
+
     public class ProductController : Controller
     {
         // GET: Product
+
+        //private readonly IProductService _productService;
+        ////private 
+
+
+        //public ProductController(IProductService productService)
+        //{
+        //    _productService = productService;
+        //}
+
+
+
         public ActionResult Index()
         {
 

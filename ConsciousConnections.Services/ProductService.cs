@@ -1,4 +1,5 @@
-﻿using ConsciousConnections.Data;
+﻿using ConsciousConnections.Contracts;
+using ConsciousConnections.Data;
 using ConsciousConnections.Models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsciousConnections.Services
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         private readonly Guid _userId;
 
